@@ -1,9 +1,9 @@
 from requests import get
-from config import WEATHER_API_KEY
 
 
 class WeatherData:
-    __WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY}&units=metric'
+    __WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q=' \
+                    '{city_name}&appid={API_KEY}&units=metric'
 
     def __init__(self, api_key):
         self.__API_KEY = api_key
