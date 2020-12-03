@@ -20,5 +20,3 @@ class WeatherData:
         except KeyError:
             return 'Введено некорректное название города !'
 
-
-weather = WeatherData(api_key=WEATHER_API_KEY)
