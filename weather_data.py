@@ -1,5 +1,5 @@
 from requests import get
-from config import API_KEY
+from config import WEATHER_API_KEY
 
 
 class WeatherData:
@@ -15,4 +15,10 @@ class WeatherData:
 
     def get_temperature_in_celsius(self, city_name):
         self.__get_temperature_data(city_name=city_name)
-        return self.__weather_data['main']['temp']
+        try:
+            return self.__weather_data['main']['temp']
+        except KeyError:
+            return 'Введено некорректное название города !'
+
+
+weather = WeatherData(api_key=WEATHER_API_KEY)
